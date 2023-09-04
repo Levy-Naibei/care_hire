@@ -21,7 +21,7 @@ const Hero = () => {
           Streamline your car rental experience with our effortless booking process
         </p>
         <ButtonComponent
-          // btnType={"button"}
+          btnType="button"
           title="Explore cars"
           containerStyles="bg-primary-blue mt-10 mb-5 rounded-full text-white"
           handleClick={handleScroll}

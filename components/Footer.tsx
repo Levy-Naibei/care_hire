@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { footerLinks } from '@/constants'
 import car_logo from './../public/logo.svg'
 
 const Footer = () => {
@@ -14,9 +15,38 @@ const Footer = () => {
             &copy; 2023 All Rights Reserved.
           </p>
         </div>
+        <div className="footer__links">
+          {
+            footerLinks.map(link => (
+              <div key={link.title} className="footer__link">
+                <h3 className="font-bold">{link.title}</h3>
+                {link.links.map(item => (
+                  <Link
+                    key={item.title}
+                    href={item.url}
+                    className="text-gray-500"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div className="flex flex-wrap justify-between items-center border-t border-gray-100 padding-x mt-10 py-10">
+        <p>&copy; 2023 All Rights Reserved</p>
+        <div className="footer__copyrights-link">
+          <Link href="/" className='text-gray-500'>
+            Privacy Policy
+          </Link>
+          <Link href="/" className='text-gray-500'>
+            Terms of Use
+          </Link>
+        </div>
       </div>
     </footer>
   )
 }
 
-export default Footer
+export default Footer;

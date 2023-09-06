@@ -10,3 +10,8 @@ export interface ButtonComponentProps {
 export interface FilterProps {
     title: string
 }
+
+export interface SearchMakeProps {
+    make: string;
+    setMake: (make: string) => void;
+}

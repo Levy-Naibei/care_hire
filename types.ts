@@ -6,3 +6,7 @@ export interface ButtonComponentProps {
     containerStyles?: string;
     handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
+
+export interface FilterProps {
+    title: string
+}

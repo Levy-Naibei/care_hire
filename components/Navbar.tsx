@@ -7,10 +7,7 @@ import car_logo from './../public/logo.svg'
 const Navbar = () => {
   return (
     <header className="w-full absolute z-10">
-      <nav className="
-        flex justify-between max-w-[1440px]
-        mx-auto items-center padding-x py-4
-        ">
+      <nav className="flex justify-between max-width items-center padding-x py-4">
         <Link href="/" className="flex justify-center items-center">
           <Image
             src={car_logo}

@@ -1,7 +1,6 @@
 "use client";
 
 import { ButtonComponentProps } from '@/types';
-import React from 'react'
 
 const ButtonComponent = (
   {

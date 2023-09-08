@@ -12,6 +12,13 @@ import { makes } from "@/constants"
 const SearchMake = ({ make, setMake }: SearchMakeProps) => {
   const [query, setQuery] = useState("");
 
+  const filteredMakes =
+    query === "" ?
+      makes : makes.filter(item => (
+        item.toLowerCase().replace(/\s+/g, "")
+          .includes(query.toLowerCase().replace(/\s+/g, ""))
+      ));
+
   return (
     <div className="search-manufacturer">
       <Combobox>
@@ -39,7 +46,28 @@ const SearchMake = ({ make, setMake }: SearchMakeProps) => {
             leaveTo="opacity-0"
             afterLeave={() => setQuery('')}
           >
-            
+            <Combobox.Options>
+              {
+                filteredMakes.length === 0 && query !== "" ? (
+                  <Combobox.Option
+                    value={query} className="search-manufacturer__option">
+                    create a "{query}"
+                  </Combobox.Option>
+                ) : (
+                  filteredMakes.map(item => (
+                    <Combobox.Option
+                      key={item}
+                      value={item}
+                      className={({ active }) =>
+                        `relative search-manufacturer__option 
+                      ${active ? 'bg-primary-blue text-white rounded-md' : "text-gray-900"}`
+                      }>
+                      {item}
+                    </Combobox.Option>
+                  ))
+                )
+              }
+            </Combobox.Options>
           </Transition>
         </div>
       </Combobox>

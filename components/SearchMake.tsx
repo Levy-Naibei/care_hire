@@ -51,7 +51,7 @@ const SearchMake = ({ make, setMake }: SearchMakeProps) => {
                 filteredMakes.length === 0 && query !== "" ? (
                   <Combobox.Option
                     value={query} className="search-manufacturer__option">
-                    create a "{query}"
+                    create "{query}"
                   </Combobox.Option>
                 ) : (
                   filteredMakes.map(item => (

@@ -6,7 +6,6 @@
 - Create Account with Rapid API - [Rapid API](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/)
 ## Tools used
 
-- Rapid API (Cars)
 - Reactjs
 - Next 13
 - Typescript

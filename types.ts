@@ -5,6 +5,9 @@ export interface ButtonComponentProps {
     title: string;
     containerStyles?: string;
     handleClick?: MouseEventHandler<HTMLButtonElement>;
+    textStyles?: string;
+    rightIcon?: string;
+    isDisabled?: boolean;
 }
 
 export interface FilterProps {

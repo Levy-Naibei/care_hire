@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import FilterComponent from "./FilterComponent";
 import SearchMake from "./SearchMake";
+import CarCard from "./CarCard";
 
 export {
     Navbar,
@@ -10,4 +11,5 @@ export {
     SearchBar,
     FilterComponent,
     SearchMake,
+    CarCard,
 }

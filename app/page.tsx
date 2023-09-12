@@ -1,7 +1,12 @@
+"use client"
 import Hero from '@/components/Hero'
-import { FilterComponent, SearchBar } from '@/components'
+import { CarCard, FilterComponent, SearchBar } from '@/components'
+import { fetchCars } from '@/utils'
 
-export default function Home() {
+export default async function Home() {
+  const cars = await fetchCars();
+  const isEmptyData = cars?.length < 1 || !Array.isArray(cars) || !cars;
+
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -17,6 +22,26 @@ export default function Home() {
             <FilterComponent title="year" />
           </div>
         </div>
+        {!isEmptyData ? (
+          <section>
+            <div className="home__cars-wrapper">
+              {
+                cars.map((car, index) => (
+                  <div key={index}>
+                    <CarCard car={car} />
+                  </div>
+                ))
+              }
+            </div>
+          </section>
+        ) : (
+          <div className="home__error-container">
+            <h2 className="text-black text-xl font-bold">
+              Oops, no results found!
+            </h2>
+            <p>{cars?.message}</p>
+          </div>
+        )}
       </div>
     </main>
   )

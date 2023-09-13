@@ -1,15 +1,17 @@
-import React from 'react'
+import { useState } from 'react'
 import Image from 'next/image';
 import { GiSteeringWheel } from 'react-icons/gi'
 
 import { CarProps } from '@/types';
 import ButtonComponent from './ButtonComponent';
 import { calculateCarRent } from '@/utils';
+import { CarDetails } from '.';
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const { city_mpg, drive, make, model, transmission, year } = car;
   const carRent = calculateCarRent(city_mpg, year);
 
@@ -66,8 +68,16 @@ const CarCard = ({ car }: CarCardProps) => {
             containerStyles="w-full py-4 rounded-full bg-primary-blue"
             textStyles="text-white text-[14px] leading-[17px] font-bold"
             rightIcon="/right-arrow.svg"
+            handleClick={() => setIsOpen(true)}
           />
         </div>
+      </div>
+      <div>
+        <CarDetails
+          car={car}
+          isOpen={isOpen}
+          closeModal={() => setIsOpen(false)}
+        />
       </div>
     </div>
   )

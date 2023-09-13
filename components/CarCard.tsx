@@ -36,7 +36,7 @@ const CarCard = ({ car }: CarCardProps) => {
         />
       </div>
       <div className="relative w-full flex mt-2">
-        <div className="flex group-hover:visible w-full justify-between text-gray">
+        <div className="flex group-hover:invisible w-full justify-between text-gray">
           <div className="flex flex-col items-center justify-center gap-2">
             <Image src="/steering-wheel.svg" alt="steering wheel" width={20} height={20} />
             <p className="text-[14px]">
@@ -44,7 +44,7 @@ const CarCard = ({ car }: CarCardProps) => {
             </p>
           </div>
         </div>
-        <div className="flex group-hover:visible w-full justify-between text-gray">
+        <div className="flex group-hover:invisible w-full justify-between text-gray">
           <div className="flex flex-col items-center justify-center gap-2">
             <Image src="/tire.svg" alt="tire" width={20} height={20} />
             <p className="text-[14px]">
@@ -52,13 +52,21 @@ const CarCard = ({ car }: CarCardProps) => {
             </p>
           </div>
         </div>
-        <div className="flex group-hover:visible w-full justify-between text-gray">
+        <div className="flex group-hover:invisible w-full justify-between text-gray">
           <div className="flex flex-col items-center justify-center gap-2">
             <Image src="/gas.svg" alt="gas" width={20} height={20} />
             <p className="text-[14px]">
               {city_mpg} MPG
             </p>
           </div>
+        </div>
+        <div className="car-card__btn-container">
+          <ButtonComponent
+            title="View More"
+            containerStyles="w-full py-4 rounded-full bg-primary-blue"
+            textStyles="text-white text-[14px] leading-[17px] font-bold"
+            rightIcon="/right-arrow.svg"
+          />
         </div>
       </div>
     </div>

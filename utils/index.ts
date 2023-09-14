@@ -1,23 +1,9 @@
 import axios from 'axios';
+import { data } from '@/constants/vehicle_data';
 
-const options = {
-  method: 'GET',
-  url: process.env.REACT_APP_API_URL,
-  params: { model: 'camry' },
-  headers: {
-    'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-    'X-RapidAPI-Host': process.env.REACT_APP_API_HOST
-  }
-};
-
-export const fetchCars = async () => {
-  try {
-    const response = await axios.request(options);
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
+export const fetchCars = () => {
+  const response = data;
+  return response;
 }
 
 export const calculateCarRent = (city_mpg: number, year: number) => {

@@ -3,8 +3,8 @@ import Hero from '@/components/Hero'
 import { CarCard, FilterComponent, SearchBar } from '@/components'
 import { fetchCars } from '@/utils'
 
-export default async function Home() {
-  const cars = await fetchCars();
+export default function Home() {
+  const cars = fetchCars();
   const isEmptyData = cars?.length < 1 || !Array.isArray(cars) || !cars;
 
   return (
@@ -39,7 +39,7 @@ export default async function Home() {
             <h2 className="text-black text-xl font-bold">
               Oops, no results found!
             </h2>
-            <p>{cars?.message}</p>
+            {/* <p>{cars?.message}</p> */}
           </div>
         )}
       </div>

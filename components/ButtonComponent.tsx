@@ -16,7 +16,7 @@ const ButtonComponent = (
       type={btnType || "button"}
       className={`custom-btn ${containerStyles}`}
       disabled={false}
-      onClick={() => handleClick}
+      onClick={handleClick}
     >
       <span className={`flex-1 ${textStyles}`}>
         {title}

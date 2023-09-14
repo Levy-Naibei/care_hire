@@ -41,7 +41,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                 <Dialog.Panel
                   className="flex flex-col gap-5 bg-white w-full relative 
                   max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl transform 
-                  transition-all text-left"
+                  transition-all shadow-xl text-left p-6"
                 >
                   <button
                     type="button"
@@ -92,6 +92,20 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                           className="object-contain"
                         />
                       </div>
+                    </div>
+                  </div>
+                  <div className="flex-1 flex flex-col gap-2">
+                    <h2 className="font-semibold capitalize text-xl">
+                      {car.make} {car.model}
+                    </h2>
+                    <div className="mt-3 flex flex-wrap gap-4">
+                      {Object.entries(car).map(([key, value]) => (
+                        <div className="flex w-full justify-between gap-5 text-right"
+                          key={key}>
+                          <h4 className="text-grey capitalize">{key.split("_").join(" ")}</h4>
+                          <p className="text-black-100 font-semibold">{value}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </Dialog.Panel>

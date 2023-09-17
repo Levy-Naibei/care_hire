@@ -20,7 +20,12 @@ const SearchBar = () => {
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
 
-  const handleSearch = () => { }
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (make === "" && model === ""){
+      return alert("please fill in the search bar");
+    }
+  }
 
   return (
     <form className="searchbar" onSubmit={handleSearch}>

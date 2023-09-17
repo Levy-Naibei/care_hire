@@ -45,8 +45,11 @@ const SearchBar = () => {
           name="model"
           placeholder="Tiguan"
           value={model}
-          onChange={(e) => setModel(e.target.value)} />
+          onChange={(e) => setModel(e.target.value)}
+        />
+        <SearchButton otherClasses="sm:hidden" />
       </div>
+      <SearchButton otherClasses="max-sm:hidden" />
     </form>
   )
 }

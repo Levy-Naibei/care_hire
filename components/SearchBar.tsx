@@ -18,6 +18,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 
 const SearchBar = () => {
   const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
 
   const handleSearch = () => { }
 
@@ -29,6 +30,22 @@ const SearchBar = () => {
           setMake={setMake}
         />
         <SearchButton otherClasses="sm:hidden" />
+      </div>
+      <div className="searchbar__item">
+        <Image
+          src="/model-icon.png"
+          alt="car model"
+          height={25}
+          width={25}
+          className="absolute w-[20px] h-[20px] ml-4"
+        />
+        <input
+          className="searchbar__input"
+          type="text"
+          name="model"
+          placeholder="Tiguan"
+          value={model}
+          onChange={(e) => setModel(e.target.value)} />
       </div>
     </form>
   )

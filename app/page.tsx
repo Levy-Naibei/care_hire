@@ -2,6 +2,7 @@
 import Hero from '@/components/Hero'
 import { CarCard, FilterComponent, SearchBar } from '@/components'
 import { fetchCars } from '@/utils'
+import { fuels, yearsOfProduction } from '@/constants';
 
 export default function Home() {
   const cars = fetchCars();
@@ -18,8 +19,8 @@ export default function Home() {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <FilterComponent title="fuel" />
-            <FilterComponent title="year" />
+            <FilterComponent title="fuels" options={fuels} />
+            <FilterComponent title="year" options={yearsOfProduction} />
           </div>
         </div>
         {!isEmptyData ? (

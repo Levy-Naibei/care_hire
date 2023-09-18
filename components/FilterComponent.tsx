@@ -38,7 +38,10 @@ const FilterComponent = ({ title, options }: FilterComponentProps) => {
                     className={({ active }) => `relative cursor-default select-none py-2 px-4 
                     ${active ? "bg-primary-blue text-white" : "text-gray-90"}`}>
                     {({ selected }) => (
-                      <span className="">{option.title}</span>
+                      <span className={`block truncate 
+                      ${selected ? "font-medium" : "font-normal"}`}>
+                        {option.title}
+                      </span>
                     )}
                   </Listbox.Option>
                 ))

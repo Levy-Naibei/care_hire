@@ -9,16 +9,18 @@ export interface ButtonComponentProps {
     rightIcon?: string;
     isDisabled?: boolean;
 }
-
-export interface FilterProps {
-    title: string
+export interface FilterComponentProps {
+    title: string;
+    options: OptionsProps[];
 }
-
+export interface OptionsProps {
+    title: string;
+    value: string;
+}
 export interface SearchMakeProps {
     make: string;
     setMake: (make: string) => void;
 }
-
 export interface CarProps {
     city_mpg: number;
     class: string;

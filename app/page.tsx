@@ -19,8 +19,8 @@ export default function Home() {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <FilterComponent title="fuels" options={fuels} />
-            <FilterComponent title="year" options={yearsOfProduction} />
+            <FilterComponent title="Fuel type" options={fuels} />
+            <FilterComponent title="Production year" options={yearsOfProduction} />
           </div>
         </div>
         {!isEmptyData ? (

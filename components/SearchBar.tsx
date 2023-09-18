@@ -36,7 +36,7 @@ const SearchBar = () => {
 
   const updateSearchParams = (make: string, model: string) => {
     const searchParams = new URLSearchParams(window.location.search);
-    
+
     if (model) {
       searchParams.set("model", model);
     } else {
@@ -50,7 +50,7 @@ const SearchBar = () => {
     }
 
     const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
-    router.push(newPathName);
+    router.push(newPathName, { scroll: false });
   }
 
   return (

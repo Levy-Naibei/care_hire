@@ -5,6 +5,7 @@ import FilterComponent from "./FilterComponent";
 import SearchMake from "./SearchMake";
 import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
+import ShowMore from "./ShowMore";
 
 export {
     Navbar,
@@ -14,4 +15,5 @@ export {
     SearchMake,
     CarCard,
     CarDetails,
+    ShowMore,
 }

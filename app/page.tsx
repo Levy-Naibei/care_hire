@@ -1,6 +1,6 @@
 "use client"
 import Hero from '@/components/Hero'
-import { CarCard, FilterComponent, SearchBar } from '@/components'
+import { CarCard, FilterComponent, SearchBar, ShowMore } from '@/components'
 import { fetchCars } from '@/utils'
 import { fuels, yearsOfProduction } from '@/constants';
 
@@ -34,6 +34,7 @@ export default function Home() {
                 ))
               }
             </div>
+            <ShowMore />
           </section>
         ) : (
           <div className="home__error-container">

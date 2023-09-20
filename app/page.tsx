@@ -3,9 +3,19 @@ import Hero from '@/components/Hero'
 import { CarCard, FilterComponent, SearchBar, ShowMore } from '@/components'
 import { fetchCars } from '@/utils'
 import { fuels, yearsOfProduction } from '@/constants';
+import { HomeProps } from '@/types';
 
-export default function Home() {
-  const cars = fetchCars();
+export default async function Home({ searchParams }: HomeProps) {
+  // const cars = fetchCars(
+  //   {
+  //     model: searchParams.model || '',
+  //     make: searchParams.make || '',
+  //     fuel: searchParams.fuel || '',
+  //     limit: searchParams.limit || 10,
+  //     year: searchParams.year || 2022,
+  //   }
+  // );
+  const cars = fetchCars()
   const isEmptyData = cars?.length < 1 || !Array.isArray(cars) || !cars;
 
   return (
@@ -34,7 +44,10 @@ export default function Home() {
                 ))
               }
             </div>
-            <ShowMore />
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > cars.length }
+            />
           </section>
         ) : (
           <div className="home__error-container">

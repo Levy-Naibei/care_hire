@@ -35,6 +35,14 @@ export interface CarProps {
     transmission: string;
     year: number;
 }
+
+export interface FilterProps {
+    model: string
+    make: string,
+    fuel: string
+    limit: number,
+    year: number,
+}
 export interface ShowMoreProps {
     pageNumber: number;
     isNext: boolean;

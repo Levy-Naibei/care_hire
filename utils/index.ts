@@ -1,9 +1,24 @@
-import axios from 'axios';
-import { data } from '@/constants/vehicle_data';
+import { FilterProps } from '@/types';
 
-export const fetchCars = () => {
-  const response = data;
-  return response;
+export const fetchCars = async (filters: FilterProps) => {
+  const { model, make, fuel, limit, year } = filters;
+
+  const headers = {
+    "X-API-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || ""
+  };
+
+  // Set the required headers for the API request
+  const response = await fetch(
+    `https://api.api-ninjas.com/v1/cars?
+    make=${make}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    {
+      headers: headers,
+    }
+  );
+
+  // Parse the response as JSON
+  const result = await response.json();
+  return result;
 }
 
 export const calculateCarRent = (city_mpg: number, year: number) => {

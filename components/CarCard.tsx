@@ -1,7 +1,6 @@
 "use client"
 import { useState } from 'react'
 import Image from 'next/image';
-import { GiSteeringWheel } from 'react-icons/gi'
 
 import { CarProps } from '@/types';
 import ButtonComponent from './ButtonComponent';

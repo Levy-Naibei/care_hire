@@ -1,4 +1,3 @@
-"use client"
 import Hero from '@/components/Hero'
 import { CarCard, FilterComponent, SearchBar, ShowMore } from '@/components'
 import { fetchCars } from '@/utils'
@@ -6,16 +5,17 @@ import { fuels, yearsOfProduction } from '@/constants';
 import { HomeProps } from '@/types';
 
 export default async function Home({ searchParams }: HomeProps) {
-  // const cars = fetchCars(
-  //   {
-  //     model: searchParams.model || '',
-  //     make: searchParams.make || '',
-  //     fuel: searchParams.fuel || '',
-  //     limit: searchParams.limit || 10,
-  //     year: searchParams.year || 2022,
-  //   }
-  // );
-  const cars = fetchCars()
+  const cars = await fetchCars(
+    {
+      model: searchParams.model || '',
+      make: searchParams.make || '',
+      fuel: searchParams.fuel || '',
+      limit: searchParams.limit || 10,
+      year: searchParams.year || 2022,
+    }
+  );
+
+  console.log({cars})
   const isEmptyData = cars?.length < 1 || !Array.isArray(cars) || !cars;
 
   return (

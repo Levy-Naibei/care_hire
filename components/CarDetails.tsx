@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
 
 import { CarProps } from '@/types';
+import { generateCarImageUrl } from '@/utils';
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -61,7 +62,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                     <div className="relative w-full h-40 bg-pattern bg-cover 
                     bg-center rounded-lg">
                       <Image
-                        src="/hero.png"
+                        src={generateCarImageUrl(car)}
                         alt="car model"
                         priority fill
                         className="object-contain"
@@ -70,7 +71,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "29")}
                           alt="car model"
                           priority fill
                           className="object-contain"
@@ -78,7 +79,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "33")}
                           alt="car model"
                           priority fill
                           className="object-contain"
@@ -86,7 +87,7 @@ const CarDetails = ({ car, isOpen, closeModal }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "13")}
                           alt="car model"
                           priority fill
                           className="object-contain"

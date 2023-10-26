@@ -29,8 +29,8 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <FilterComponent options={fuels} />
-            <FilterComponent options={yearsOfProduction} />
+            <FilterComponent title="fuel" options={fuels} />
+            <FilterComponent title="year" options={yearsOfProduction} />
           </div>
         </div>
         {!isEmptyData ? (

@@ -11,7 +11,7 @@ export interface ButtonComponentProps {
 }
 
 export interface FilterComponentProps {
-  title: string;
+  // title: string;
   options: OptionsProps[];
 }
 

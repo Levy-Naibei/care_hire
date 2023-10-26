@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Listbox, Transition } from '@headlessui/react';
 import { FilterComponentProps } from '@/types'
 
-const FilterComponent = ({ title, options }: FilterComponentProps) => {
+const FilterComponent = ({ options }: FilterComponentProps) => {
   const [selected, setSelected] = useState(options[0]);
   return (
     <div className="w-fit">

@@ -1,9 +1,13 @@
 # Car Rent App
-- Data used is from Rapid API
+- Car models and make from rapid API
+- Car images from IMAGIN.studio
 
 ## Requirements
 
-- Create Account with Rapid API - [Rapid API](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/)
+- Create Accounts in:
+     - [Rapid API](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/)
+     - [IMAGIN.studio](https://www.imagin.studio/car-image-api)
+
 ## Tools used
 
 - Reactjs

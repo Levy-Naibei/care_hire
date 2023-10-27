@@ -28,10 +28,7 @@ const SearchBar = () => {
       return alert("please fill in the search bar");
     }
 
-    updateSearchParams(
-      make.toLowerCase(),
-      model.toLowerCase()
-    );
+    updateSearchParams(make.toLowerCase(), model.toLowerCase());
   }
 
   const updateSearchParams = (make: string, model: string) => {

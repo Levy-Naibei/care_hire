@@ -30,6 +30,8 @@ yarn dev
 pnpm dev
 ```
 
+`link to deployed app` [car hire](https://car-hire-app.vercel.app/)
+
 ## Upcoming features
 - Authentication
 - Book and rent car

@@ -11,10 +11,7 @@ const FilterComponent = ({ title, options }: FilterComponentProps) => {
   const router = useRouter();
 
   const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(
-      title,
-      e.value.toLowerCase()
-    );
+    const newPathName = updateSearchParams(title, e.value.toLowerCase());
     router.push(newPathName, { scroll: false });
   }
 

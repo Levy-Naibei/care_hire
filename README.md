@@ -29,3 +29,9 @@ yarn dev
 # or
 pnpm dev
 ```
+
+## Upcoming features
+- Authentication
+- Book and rent car
+- Admin dashboard
+- pages for footer links

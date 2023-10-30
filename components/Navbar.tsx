@@ -23,6 +23,12 @@ const Navbar = () => {
           btnType="button"
           containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
         />
+
+        <ButtonComponent
+          title='Sign Up'
+          btnType="button"
+          containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
+        />
       </nav>
     </header>
   )

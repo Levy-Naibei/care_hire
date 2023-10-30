@@ -3,7 +3,7 @@
 import { Fragment, useState } from "react"
 import Image from "next/image"
 import { Combobox, Transition } from "@headlessui/react"
-import { FaCar } from 'react-icons/fa'
+// import { FaCar } from 'react-icons/fa'
 
 import { SearchMakeProps } from "@/types"
 import car_logo from './../public/car-logo.svg'

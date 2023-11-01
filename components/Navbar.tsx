@@ -18,17 +18,19 @@ const Navbar = () => {
           />
         </Link>
 
-        <ButtonComponent
-          title='Sign In'
-          btnType="button"
-          containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
-        />
+        <div className="navbar__auth-links">
+          <ButtonComponent
+            title='Sign In'
+            btnType="button"
+            containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
+          />
 
-        <ButtonComponent
-          title='Sign Up'
-          btnType="button"
-          containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
-        />
+          <ButtonComponent
+            title='Sign Up'
+            btnType="button"
+            containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
+          />
+        </div>
       </nav>
     </header>
   )

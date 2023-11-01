@@ -15,7 +15,7 @@ export default async function Home({ searchParams }: HomeProps) {
     }
   );
 
-  console.log({cars})
+  // console.log({cars})
   const isEmptyData = cars?.length < 1 || !Array.isArray(cars) || !cars;
 
   return (

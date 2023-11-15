@@ -39,7 +39,7 @@
 
 /* Start: Navbar */
 .navbar__auth-links {
-  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4;
+  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 text-primary-blue bg-white;
 }
 /* END: Navbar */
 

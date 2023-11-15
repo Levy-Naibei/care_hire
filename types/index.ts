@@ -8,6 +8,8 @@ export interface ButtonComponentProps {
   textStyles?: string;
   rightIcon?: string;
   isDisabled?: boolean;
+  as?: React.ElementType;
+  to?: string;
 }
 
 export interface FilterComponentProps {

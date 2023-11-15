@@ -1,19 +1,23 @@
-"use client"
-import Link from 'next/link'
-import Image from 'next/image'
+// "use client"
+import Link from "next/link";
+import Image from "next/image";
 
-import ButtonComponent from './ButtonComponent'
-import car_logo from './../public/logo.svg'
+// import ButtonComponent from "./ButtonComponent";
+import car_logo from "./../public/logo.svg";
+import { getServerSession } from "next-auth";
+import { options } from "../api/auth/[...nextauth]/options";
 
-const Navbar = () => {
+const Navbar = async () => {
+  // const handleButtonClick = (buttonType: string) => {
+  //   if (buttonType == "Sign In")
+  //     alert("sign in feature coming soon");
+  //   else {
+  //     alert("sign up feature coming soon")
+  //   }
+  // }
 
-  const handleButtonClick = (buttonType: string) => {
-    if (buttonType == "Sign In")
-      alert("sign in feature coming soon");
-    else{
-      alert("sign up feature coming soon")
-    }
-  }
+  const session = await getServerSession(options);
+  console.log({session})
 
   return (
     <header className="w-full absolute z-10">
@@ -29,23 +33,30 @@ const Navbar = () => {
         </Link>
 
         <div className="navbar__auth-links">
-          <ButtonComponent
+          {session ? (
+            <Link href="../api/auth/signout?callbackUrl=/"> Logout </Link>
+          ) : (
+            <Link href="../api/auth/signin"> Login </Link>
+          )}
+          {/* <ButtonComponent
+            as={Link}
+            to="/dashboard"
             title='Sign In'
             btnType="button"
             containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
             handleClick={() => handleButtonClick("Sign In")}
-          />
+            />
 
-          <ButtonComponent
-            title='Sign Up'
-            btnType="button"
-            containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
-            handleClick={() => handleButtonClick("Sign Up")}
-          />
+            <ButtonComponent
+              title='Sign Up'
+              btnType="button"
+              containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
+              handleClick={() => handleButtonClick("Sign Up")}
+            /> */}
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

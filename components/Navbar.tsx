@@ -1,22 +1,12 @@
-// "use client"
 import Link from "next/link";
 import Image from "next/image";
 
-// import ButtonComponent from "./ButtonComponent";
 import car_logo from "./../public/logo.svg";
-import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth/next";
+import { OPTIONS } from "@/app/api/auth/[...nextauth]/options";
 
 const Navbar = async () => {
-  // const handleButtonClick = (buttonType: string) => {
-  //   if (buttonType == "Sign In")
-  //     alert("sign in feature coming soon");
-  //   else {
-  //     alert("sign up feature coming soon")
-  //   }
-  // }
-
-  const session = await getServerSession(options);
+  const session = await getServerSession(OPTIONS);
   console.log({session})
 
   return (
@@ -34,25 +24,10 @@ const Navbar = async () => {
 
         <div className="navbar__auth-links">
           {session ? (
-            <Link href="../api/auth/signout?callbackUrl=/"> Logout </Link>
+            <Link href="/api/auth/signout?callbackUrl=/"> Logout </Link>
           ) : (
-            <Link href="../api/auth/signin"> Login </Link>
+            <Link href="/dashboard"> Login </Link>
           )}
-          {/* <ButtonComponent
-            as={Link}
-            to="/dashboard"
-            title='Sign In'
-            btnType="button"
-            containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
-            handleClick={() => handleButtonClick("Sign In")}
-            />
-
-            <ButtonComponent
-              title='Sign Up'
-              btnType="button"
-              containerStyles="text-primary-blue bg-white rounded-full min-w-[130px]"
-              handleClick={() => handleButtonClick("Sign Up")}
-            /> */}
         </div>
       </nav>
     </header>

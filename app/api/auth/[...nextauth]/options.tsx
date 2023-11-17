@@ -23,10 +23,13 @@ export const OPTIONS: NextAuthOptions = {
       if (user) token.id = user.id;
       return token;
     },
-    async session(params) {
-      let { session, token } = params;
-      session.user = token;
-      return session;
+    // async session(params) {
+    //   let { session, token } = params;
+    //   session.user = token;
+    //   return session;
+    // },
+    session({ session, token, user }) {
+      return session
     },
   },
 };
